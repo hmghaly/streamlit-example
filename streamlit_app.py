@@ -14,7 +14,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 """
 st.write("مرحبا بكم في البرمجان")
 st.button('Hit me')
-st.data_editor('Edit data', data)
+input0= st.text_input('Enter some text')
 
 
 num_points = st.slider("Number of points in spiral", 1, 10000, 1100)
