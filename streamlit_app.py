@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 
 st.write("مرحبا بكم في البرمجان")
-st.button('Hit me')
+#st.button('Hit me')
 input0= st.text_input('Enter some text')
 st.write(input0)
 
