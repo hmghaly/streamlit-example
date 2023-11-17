@@ -3,10 +3,28 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
+import requests
+import json
+
+def search_arabic_word(word):
+    api_key = "470deac4-36a4-482c-a2e7-7dd97a88135a"
+    base_url = "https://siwar.ksaa.gov.sa/api/alriyadh/search"
+    headers = {"accept": "application/json", "apikey": api_key}
+    params = {"query": word}
+    response = requests.get(base_url, headers=headers, params=params)
+
+    if response.status_code == 200:
+        return json.dumps(response.json(), indent=4, ensure_ascii=False)
+    else:
+        return None
+
 st.write("مرحبا بكم في البرمجان")
 #st.button('Hit me')
 input0= st.text_input('Enter some text')
 st.write(input0)
+
+output0=search_arabic_word(input0)
+st.write(output0)
 
 num_points = st.slider("Number of points in spiral", 1, 10000, 1100)
 num_turns = st.slider("Number of turns in spiral", 1, 300, 31)
