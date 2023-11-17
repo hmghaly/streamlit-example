@@ -20,7 +20,7 @@ def search_arabic_word(word):
 
 st.write("مرحبا بكم في البرمجان")
 #st.button('Hit me')
-input0= st.text_input('Enter some text')
+input0= st.text_input('أدخل كلمة')
 st.write(input0)
 
 output0=search_arabic_word(input0)
