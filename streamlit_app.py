@@ -18,7 +18,9 @@ def search_arabic_word(word):
     else:
         return None
 
-st.write("مرحبا بكم في البرمجان")
+st.write("مرحبا بكم في مشروع إجادة")
+
+st.write("يهدف تطبيق إجادة إلى الاستفادة من معجم الرياض في الكشف عن معاني الكلمات في أي نص يتم إدخاله، وذلك في إطار مسابقة برمجان العربية")
 #st.button('Hit me')
 input0= st.text_input('أدخل كلمة')
 st.write(input0)
