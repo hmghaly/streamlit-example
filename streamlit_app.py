@@ -48,23 +48,28 @@ st.write(output0)
 
 cur_tokens=tok_ar_diac(input0)
 annotated_tokens=[]
-for token0 in cur_tokens: annotated_tokens.append((token0,"noun"))
-annotated_text(annotated_tokens)
+for token0 in cur_tokens: 
+  if len(token0)<3: continue
+  token_output0=search_arabic_word(token0)
+  st.json(json.loads(token_output0))
 
-annotated_text(
-    "This ",
-    ("is", "verb"),
-    " some ",
-    ("annotated", "adj"),
-    ("text", "noun"),
-    " for those of ",
-    ("you", "pronoun"),
-    " who ",
-    ("like", "verb"),
-    " this sort of ",
-    ("thing", "noun"),
-    "."
-)
+  #annotated_tokens.append((token0,"noun"))
+#annotated_text(annotated_tokens)
+
+# annotated_text(
+#     "This ",
+#     ("is", "verb"),
+#     " some ",
+#     ("annotated", "adj"),
+#     ("text", "noun"),
+#     " for those of ",
+#     ("you", "pronoun"),
+#     " who ",
+#     ("like", "verb"),
+#     " this sort of ",
+#     ("thing", "noun"),
+#     "."
+# )
 
 # num_points = st.slider("Number of points in spiral", 1, 10000, 1100)
 # num_turns = st.slider("Number of turns in spiral", 1, 300, 31)
