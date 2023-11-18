@@ -35,6 +35,18 @@ def search_arabic_word(word):
     else:
         return None
 
+def exact_search_arabic_word(word):
+    api_key = "470deac4-36a4-482c-a2e7-7dd97a88135a"
+    base_url = "https://siwar.ksaa.gov.sa/api/alriyadh/exact-search"
+    headers = {"accept": "application/json", "apikey": api_key}
+    params = {"query": word}
+    response = requests.get(base_url, headers=headers, params=params)
+
+    if response.status_code == 200:
+        return json.dumps(response.json(), indent=4, ensure_ascii=False)
+    else:
+        return None
+
 st.title("إجادة")
 st.header("مرحبا بكم في تطبيق إجادة")
 
@@ -43,8 +55,8 @@ st.write("يهدف تطبيق إجادة إلى الاستفادة من معجم
 input0= st.text_input('أدخل كلمة')
 st.write(input0)
 
-output0=search_arabic_word(input0)
-st.write(output0)
+# output0=search_arabic_word(input0)
+# st.write(output0)
 
 cur_tokens=tok_ar_diac(input0)
 annotated_tokens=[]
@@ -52,7 +64,7 @@ for token0 in cur_tokens:
   if len(token0)<3: continue
   
   try:
-    token_output0=search_arabic_word(token0)
+    token_output0=exact_search_arabic_word(token0)
     out_parsed=json.loads(token_output0)
     for test in out_parsed: 
       #print(test)        
