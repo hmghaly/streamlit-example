@@ -108,8 +108,8 @@ gsheet_link=f'<a href="{url0}" target="new">رابط ملف القوقل شيت<
 #st.markdown(gsheet_link)
 
 url = "https://docs.google.com/spreadsheets/d/1vwT6PHMNLPP37CmNHbYDPJ--yHNU1VMXHUj0QpF3N2Q/edit?usp=sharing"
-st.write("check out this [link](%s)" % url)
-st.markdown("check out this [link](%s)" % url)
+st.write("الرابط: [link](%s)" % url)
+#st.markdown("check out this [link](%s)" % url)
 
 
 
