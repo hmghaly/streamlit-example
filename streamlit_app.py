@@ -69,7 +69,7 @@ for token0 in cur_tokens:
     #st.json(json.loads(token_output0))
   except:
     st.write(f'هذه الكلمة غير موجودة في المعجم: ' )
-    st.write("token0")
+    st.write(token0)
     st.write("----")
     
 
