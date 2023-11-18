@@ -52,8 +52,9 @@ st.header("مرحبا بكم في تطبيق إجادة")
 
 st.write("يهدف تطبيق إجادة إلى الاستفادة من معجم الرياض في الكشف عن معاني الكلمات في أي نص يتم إدخاله، وذلك في إطار مسابقة برمجان العربية")
 #st.button('Hit me')
-input0= st.text_input('أدخل كلمة')
+input0= st.text_input('أدخل جملة')
 st.write(input0)
+st.write("يرجى الانتظار قليلا، يجري البحث في المعجم")
 
 # output0=search_arabic_word(input0)
 # st.write(output0)
@@ -78,6 +79,7 @@ for token0 in cur_tokens:
       broken_plural0=test["extras"]['senseDetails'][0]['BrokenPlural']
       broken_plural_str0=", ".join(broken_plural0)
       pos0=test["pos"]
+      link0=f'<a href="https://dictionary.ksaa.gov.sa/result/{form0}" target="_blank">{form0}</a>'
       row_items=[token0,'✅',form0,translation0,pos0,broken_plural_str0]
       # st.write(form0)
       # st.write(translation0)
