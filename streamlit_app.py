@@ -69,6 +69,8 @@ for token0 in cur_tokens:
   try:
     token_output0=exact_search_arabic_word(token0)
     out_parsed=json.loads(token_output0)
+    if len(out_parsed)==0:
+      row_items=[token0,'❌',"","","",""]
     for test in out_parsed: 
       #print(test)        
       form0=test["lemma"]['formRepresentations'][0]["form"]
