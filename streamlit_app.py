@@ -99,6 +99,16 @@ for token0 in cur_tokens:
 table_df=pd.DataFrame(table_items, columns = cur_headers)
 st.table(table_df)
 
+
+
+st.header("إثراء المعجم")
+s.write("يرجى الذهاب إلى هذا الرابط لإضافة المدخلات غير الموجودة في المعجم على جدول قوقل شيت لإثراء المعجم بها")
+url0="https://docs.google.com/spreadsheets/d/1vwT6PHMNLPP37CmNHbYDPJ--yHNU1VMXHUj0QpF3N2Q/edit?usp=sharing"
+gsheet_link=f'<a href="{url0}" target="new">{رابط ملف القوقل شيت}</a>'
+
+
+
+
   #annotated_tokens.append((token0,"noun"))
 #annotated_text(annotated_tokens)
 
