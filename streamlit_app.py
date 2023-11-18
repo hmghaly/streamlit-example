@@ -50,8 +50,11 @@ cur_tokens=tok_ar_diac(input0)
 annotated_tokens=[]
 for token0 in cur_tokens: 
   if len(token0)<3: continue
-  token_output0=search_arabic_word(token0)
-  st.json(json.loads(token_output0))
+  
+  try:
+    token_output0=search_arabic_word(token0)
+    st.json(json.loads(token_output0))
+    
 
   #annotated_tokens.append((token0,"noun"))
 #annotated_text(annotated_tokens)
