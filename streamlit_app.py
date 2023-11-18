@@ -105,7 +105,11 @@ st.header("إثراء المعجم")
 st.write("يرجى الذهاب إلى هذا الرابط لإضافة المدخلات غير الموجودة في المعجم على جدول قوقل شيت لإثراء المعجم بها")
 url0="https://docs.google.com/spreadsheets/d/1vwT6PHMNLPP37CmNHbYDPJ--yHNU1VMXHUj0QpF3N2Q/edit?usp=sharing"
 gsheet_link=f'<a href="{url0}" target="new">رابط ملف القوقل شيت</a>'
-st.markdown(gsheet_link)
+#st.markdown(gsheet_link)
+
+url = "https://docs.google.com/spreadsheets/d/1vwT6PHMNLPP37CmNHbYDPJ--yHNU1VMXHUj0QpF3N2Q/edit?usp=sharing"
+st.write("check out this [link](%s)" % url)
+st.markdown("check out this [link](%s)" % url)
 
 
 
