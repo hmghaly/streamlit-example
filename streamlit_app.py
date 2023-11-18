@@ -62,13 +62,14 @@ for token0 in cur_tokens:
       pos0=test["pos"]
       st.write(form0)
       st.write(translation0)
-      st.write(broken_plural0)
+      st.write(", ".join(broken_plural0))
       st.write(pos0)
       st.write("----")
     
     #st.json(json.loads(token_output0))
   except:
-    st.write(f'{token0} هذه الكلمة غير موجودة في المعجم: ' )
+    st.write(f'هذه الكلمة غير موجودة في المعجم: ' )
+    st.write("token0")
     st.write("----")
     
 
