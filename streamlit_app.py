@@ -60,8 +60,10 @@ st.write(input0)
 
 cur_tokens=tok_ar_diac(input0)
 annotated_tokens=[]
+table_items=[]
+cur_headers=["الكلمة","موجودة؟","المدخل","الترجمة","النوع","الجمع"]
 for token0 in cur_tokens: 
-  if len(token0)<3: continue
+  if len(token0)<2: continue
   
   try:
     token_output0=exact_search_arabic_word(token0)
@@ -71,19 +73,26 @@ for token0 in cur_tokens:
       form0=test["lemma"]['formRepresentations'][0]["form"]
       translation0=test["senses"][0]['translations'][0]["form"]
       broken_plural0=test["extras"]['senseDetails'][0]['BrokenPlural']
+      broken_plural_str0=", ".join(broken_plural0)
       pos0=test["pos"]
-      st.write(form0)
-      st.write(translation0)
-      st.write(", ".join(broken_plural0))
-      st.write(pos0)
-      st.write("----")
+      row_items=[token0,'✅',form0,translation0,pos0,broken_plural_str0]
+      # st.write(form0)
+      # st.write(translation0)
+      # st.write(", ".join(broken_plural0))
+      # st.write(pos0)
+      # st.write("----")
     
     #st.json(json.loads(token_output0))
   except:
-    st.write(f'هذه الكلمة غير موجودة في المعجم: ' )
-    st.write(token0)
-    st.write("----")
+    row_items=[token0,'❌',"","","",""]
+    # st.write(f'هذه الكلمة غير موجودة في المعجم: ' )
+    # st.write(token0)
+    # st.write("----")
+  table_items.append(row_items)
     
+
+table_df=pd.DataFrame(table_items, columns = cur_headers)
+st.table(table_df)
 
   #annotated_tokens.append((token0,"noun"))
 #annotated_text(annotated_tokens)
