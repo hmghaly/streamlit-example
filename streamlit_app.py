@@ -54,6 +54,8 @@ for token0 in cur_tokens:
   try:
     token_output0=search_arabic_word(token0)
     st.json(json.loads(token_output0))
+  except:
+    st.write(token0)
     
 
   #annotated_tokens.append((token0,"noun"))
