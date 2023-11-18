@@ -6,7 +6,23 @@ from annotated_text import annotated_text
 
 import requests
 import json
+import re
 
+diac=u'\u064e\u064f\u0650\u0651\u0652\u064c\u064b\u064d\ufc62'
+def tok_ar_diac(text): #tokenize Arabic words with diacritics
+  diac_list=[]
+  for i0,dia0 in enumerate(diac):
+    if not dia0 in text: continue
+    place_holder0=f'_diac{i0}_'
+    text=text.replace(dia0,place_holder0)
+    diac_list.append((place_holder0,dia0))
+
+  text=re.sub("(\W)",r" \1 ",text)
+  for a,b in diac_list:
+    text=text.replace(a,b)
+  tokens=[v for v in re.split("\s+",text) if v]
+  return tokens
+    
 def search_arabic_word(word):
     api_key = "470deac4-36a4-482c-a2e7-7dd97a88135a"
     base_url = "https://siwar.ksaa.gov.sa/api/alriyadh/search"
@@ -29,6 +45,9 @@ st.write(input0)
 
 output0=search_arabic_word(input0)
 st.write(output0)
+
+tokens=tok_ar_diac(input0)
+annotated_text(tokens)
 
 annotated_text(
     "This ",
