@@ -53,9 +53,23 @@ for token0 in cur_tokens:
   
   try:
     token_output0=search_arabic_word(token0)
-    st.json(json.loads(token_output0))
+    out_parsed=json.loads(token_output0)
+    for test in out_parsed: 
+      #print(test)        
+      form0=test["lemma"]['formRepresentations'][0]["form"]
+      translation0=test["senses"][0]['translations'][0]["form"]
+      broken_plural0=test["extras"]['senseDetails'][0]['BrokenPlural']
+      pos0=test["pos"]
+      st.write(form0)
+      st.write(translation0)
+      st.write(broken_plural0)
+      st.write(pos0)
+      st.write("----")
+    
+    #st.json(json.loads(token_output0))
   except:
-    st.write(token0)
+    st.write(f'{token0} هذه الكلمة غير موجودة في المعجم: ' )
+    st.write("----")
     
 
   #annotated_tokens.append((token0,"noun"))
