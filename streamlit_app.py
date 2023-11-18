@@ -58,6 +58,7 @@ st.write(input0)
 # output0=search_arabic_word(input0)
 # st.write(output0)
 
+
 cur_tokens=tok_ar_diac(input0)
 annotated_tokens=[]
 table_items=[]
