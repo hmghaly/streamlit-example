@@ -24,7 +24,7 @@ def tok_ar_diac(text): #tokenize Arabic words with diacritics
   return tokens
     
 
-def exact_search_arabic_word(word):
+def exact_search(word):
     cur_api_key = "470deac4-36a4-482c-a2e7-7dd97a88135a"
     cur_base_url = "https://siwar.ksaa.gov.sa/api/alriyadh/exact-search"
     headers = {"accept": "application/json", "apikey": cur_api_key}
@@ -57,7 +57,7 @@ for token0 in cur_tokens:
   if len(token0)<2: continue
   
   try:
-    token_output0=exact_search_arabic_word(token0)
+    token_output0=exact_search(token0)
     out_parsed=json.loads(token_output0)
     if len(out_parsed)==0:
       row_items=[token0,'❌',"","","",""]
