@@ -7,6 +7,7 @@ from annotated_text import annotated_text
 import requests
 import json
 import re
+import os
 
 diac=u'\u064e\u064f\u0650\u0651\u0652\u064c\u064b\u064d\ufc62'
 def tok_ar_diac(text): #tokenize Arabic words with diacritics
@@ -47,10 +48,12 @@ input0= st.text_input('أدخل جملة')
 st.write(input0)
 st.write("يرجى الانتظار قليلا، يجري البحث في المعجم")
 
-fopen=open("test.txt")
-content0=fopen.read()
-fopen.close()
-st.write(content0)
+# fopen=open("test.txt")
+# content0=fopen.read()
+# fopen.close()
+# st.write(content0)
+
+st.write(os.getcwd())
 
 # output0=search_arabic_word(input0)
 # st.write(output0)
