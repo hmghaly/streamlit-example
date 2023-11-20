@@ -47,6 +47,11 @@ input0= st.text_input('أدخل جملة')
 st.write(input0)
 st.write("يرجى الانتظار قليلا، يجري البحث في المعجم")
 
+fopen=open("test.txt")
+content0=fopen.read()
+fopen.close()
+st.write(content0)
+
 # output0=search_arabic_word(input0)
 # st.write(output0)
 
