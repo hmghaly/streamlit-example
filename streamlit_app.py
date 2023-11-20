@@ -59,7 +59,7 @@ for token0 in cur_tokens:
   if len(token0)<2: continue
   
   try:
-    token_output0=search_arabic_word(token0,False)
+    token_output0=search_arabic_word(token0)
     out_parsed=json.loads(token_output0)
     if len(out_parsed)==0:
       row_items=[token0,'❌',"","","",""]
