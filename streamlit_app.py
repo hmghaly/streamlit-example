@@ -53,7 +53,7 @@ st.write("يرجى الانتظار قليلا، يجري البحث في الم
 # fopen.close()
 # st.write(content0)
 
-st.write(os.getcwd())
+#st.write(os.getcwd())
 
 # output0=search_arabic_word(input0)
 # st.write(output0)
